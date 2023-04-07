@@ -11,6 +11,10 @@
     margin: auto;
 }
 
+nav {
+    background: #23A6F0;
+}
+
 .nav-container {
     display: flex;
     align-items: center;
@@ -18,7 +22,6 @@
     font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
-    background: #23A6F0;
     color: white;
 }
 
