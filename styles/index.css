@@ -8,6 +8,7 @@
 
 .warraper {
     max-width: 1440px;
+    margin: auto;
 }
 
 .nav-container {
@@ -17,4 +18,28 @@
     font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 200;
+    background: #23A6F0;
+    color: white;
+}
+
+@media (max-width:1440px) {}
+
+@media (max-width:1280px) {}
+
+@media (max-width:1024px) {}
+
+@media (max-width:768px) {
+    .nav-container {
+        font-size: 1.3rem;
+    }
+
+}
+
+@media (max-width:480px) {
+    .nav-container {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
