@@ -114,7 +114,7 @@ nav {
 .intro {
   display: flex;
   align-items: center;
-  max-height: 70vh;
+  max-height: 100vh;
   padding: 100px 0;
 }
 .left {
@@ -128,6 +128,7 @@ nav {
   line-height: 57px;
   letter-spacing: 0.2px;
   color: #252b42;
+  max-width: 15ch;
 }
 .left p {
   font-family: "Montserrat", sans-serif;
@@ -140,18 +141,22 @@ nav {
   color: #737373;
 }
 .right {
-  flex: 1.5;
+  flex: 1.8;
   border: 2px solid green;
-  max-height: 60vh;
+  background: url("/images/intro-img2.jpg");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* display: flex;
   justify-content: flex-end; */
   /* padding: 50px 0 50px 50px; */
   /* border: 2px solid black; */
 }
-.right img {
+/* .right img {
   max-width: 100%;
   height: auto;
-}
+} */
 /* intro section ends */
 /* media queries */
 
