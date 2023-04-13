@@ -14,7 +14,7 @@
     <nav>
         <div class="nav-container warraper ">
             <h1 class="logo">EQ-Quotes</h1>
-            <p class="call">Call: <a>915-205-6373</a></p>
+            <p class="call">Call: <a href="tel:9152056373" style="color: white;">(TTY) 915-205-6373</a></p>
         </div>
 
     </nav>
@@ -60,8 +60,8 @@
     </section>
     <section class="features wrapper2">
         <div class="uppersection">
-            <h2>Our Insurance</h2>
-            <h3 class="blueColor">Features</h3>
+            <h2>Our <span class="blueColor">Features</span></h2>
+
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur voluptas. Maiores
                 voluptatibus, odio fugit consequuntur voluptatum explicabo debitis amet.</p>
         </div>
@@ -88,8 +88,8 @@
     </section>
     <section class="features wrapper2" id="services">
         <div class="uppersection">
-            <h2>Our Insurance</h2>
-            <h3 class="blueColor">Services</h3>
+            <h2>Our <span class="blueColor">Services</span></h2>
+
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur voluptas. Maiores
                 voluptatibus, odio fugit consequuntur voluptatum explicabo debitis amet.</p>
         </div>
@@ -103,7 +103,7 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
                 </ul>
                 <div class="servicesBtns">
-                    <button>Get Quote Now</button>
+                    <button onclick="ShowModal('homesecurity.html')">Get Quote Now</button>
                     <button>Learn More</button>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
                 </ul>
                 <div class="servicesBtns">
-                    <button>Get Quote Now</button>
+                    <button onclick="ShowModal('HomeWarranty.html')">Get Quote Now</button>
                     <button>Learn More</button>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
                 </ul>
                 <div class="servicesBtns">
-                    <button>Get Quote Now</button>
+                    <button onclick="ShowModal('homeinsurance.html')">Get Quote Now</button>
                     <button>Learn More</button>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
                 </ul>
                 <div class="servicesBtns">
-                    <button>Get Quote Now</button>
+                    <button onclick="ShowModal('solar.html')">Get Quote Now</button>
                     <button>Learn More</button>
                 </div>
             </div>
@@ -151,7 +151,7 @@
     <footer>
         <div class="content wrapper2">
             <div class="logo">
-                <h1>EQ Quotes</h1>
+                <h1 class="blueColor">EQ Quotes</h1>
             </div>
             <div class="data">
                 <h2>Quick Links</h2>
@@ -162,12 +162,23 @@
                 <h2>Contact Us</h2>
                 <div class="number">
                     <img src="images/phone.svg" alt="">
-                    <a class="para" href="tel:9152056373">915-205-6373</a>
+                    <a class="para" href="tel:9152056373">(TTY) 915-205-6373</a>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- modal -->
 
+    <div class="modal hide" onclick="ChangeDisplay()">
+        <div class="box">
+            <h3>Enter Your Zip Code</h3>
+            <p>Get Free Quote</p>
+            <input type="number" placeholder="Enter Zip Code..." class="zipInput">
+            <button onclick="Submit(event)">Submit</button>
+            <span class="icon" onclick="ChangeDisplay()"><i class="bi bi-x-lg"></i></span>
+        </div>
+    </div>
 </body>
+<script src="./controllers/index.js"></script>
 
 </html>

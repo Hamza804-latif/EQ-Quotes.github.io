@@ -312,6 +312,7 @@ nav {
   border: none;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  color: rgb(216, 216, 216);
   font-weight: 500;
 }
 .servicesBtns button:nth-child(1) {
@@ -352,6 +353,7 @@ footer .content .data h2 {
   /* identical to box height, or 150% */
 
   letter-spacing: 0.1px;
+  text-align: center;
 
   /* text-color */
 
@@ -370,19 +372,122 @@ footer .content .data:nth-child(3) img {
   width: 30px;
   height: 30px;
 }
+footer .content .data:nth-child(2) a {
+  text-decoration: underline !important;
+}
 footer .content .data .para {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 24px;
-  /* identical to box height, or 171% */
-
   letter-spacing: 0.2px;
-
-  /* second-text-color */
-  margin-left: 8px;
+  margin-left: 6px;
   color: #737373;
+  cursor: pointer;
+}
+/* modal styles */
+.modal {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.96;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.box {
+  max-width: 465px;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid #dee2e6;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  margin: auto;
+  margin-top: 60px;
+  position: relative;
+  z-index: 100;
+}
+.box h3 {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #54595e;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.box p {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(84, 89, 94, 0.6);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.box input {
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 13px 16px;
+}
+.box input::placeholder {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  color: #acacac;
+}
+.box button {
+  background: #4f4f4f;
+  border-radius: 8px;
+  padding: 14px 0;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+.icon {
+  position: absolute;
+  background: #e5e5e5;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 5px;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+.hide {
+  display: none;
 }
 
 /* media queries start */
@@ -532,12 +637,7 @@ footer .content .data .para {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    /* or 143% */
-
     letter-spacing: 0.2px;
-
-    /* second-text-color */
-
     color: #363535;
   }
   .lowersection .card img {
@@ -567,6 +667,9 @@ footer .content .data .para {
     gap: 20px;
     -webkit-gap: 20px;
     grid-gap: 20px;
+  }
+  footer .content {
+    width: 100%;
   }
 }
 
@@ -663,6 +766,13 @@ footer .content .data .para {
     flex-direction: row;
     gap: 8px;
     -webkit-gap: 8px;
+  }
+  footer .content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  footer .content .data:nth-child(3) {
+    align-self: inherit;
   }
 }
 
