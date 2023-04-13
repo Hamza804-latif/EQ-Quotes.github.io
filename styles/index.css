@@ -310,8 +310,8 @@ nav {
   outline: none;
   border: none;
   cursor: pointer;
+  background-color: gainsboro;
   font-family: "Montserrat", sans-serif;
-  color: rgb(216, 216, 216);
   font-weight: 500;
 }
 .servicesBtns button:nth-child(1) {
