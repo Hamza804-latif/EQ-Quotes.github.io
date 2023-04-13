@@ -1,0 +1,35 @@
+.blueColor {
+  color: #23a6f0;
+}
+.warraper {
+  max-width: 1440px;
+  margin: auto;
+}
+.wrapper2 {
+  max-width: 1280px;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+}
+.button {
+  padding: 15px 36px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background: #23a6f0;
+  border: none;
+  border-radius: 37px;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .wrapper2 {
+    max-width: 950px;
+  }
+}
