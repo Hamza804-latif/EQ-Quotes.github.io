@@ -35,7 +35,7 @@ nav {
 }
 .hero::after {
   content: "";
-  background: url("../images/heroPic.jpg");
+  background: url("images/heroPic.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
