@@ -57,6 +57,8 @@
   line-height: 28px;
   letter-spacing: 0.2px;
   color: #737373;
+  outline: 1px solid gainsboro;
+  margin-top: 4px;
 }
 .form-child input::placeholder {
   font-family: "Montserrat";
