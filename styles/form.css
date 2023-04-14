@@ -97,6 +97,7 @@
   .form-main {
     flex-direction: column;
     padding: 0 0;
+    gap: 20px;
   }
   .form-main .img {
     flex: initial;
