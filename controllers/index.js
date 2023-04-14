@@ -24,6 +24,7 @@ function Submit(event) {
     }?zip=${modalInputRef.value}`;
     page = null;
     modalInputRef.value = "";
+    crossBtnRef.classList.add("hide");
   } else {
     console.log("please enter values");
   }
