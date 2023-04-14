@@ -35,6 +35,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
 }
 .hero::after {
   content: "";
