@@ -19,9 +19,9 @@ function Submit(event) {
   if (modalInputRef.value) {
     console.log(modalInputRef.value);
     localStorage.setItem("zip", modalInputRef.value);
-    window.location.href = `${page ? page : "notfound.html"}?zip=${
-      modalInputRef.value
-    }`;
+    window.location.href = `https://hamza804-latif.github.io/EQ-Quotes.github.io/${
+      page ? page : "notfound.html"
+    }?zip=${modalInputRef.value}`;
     page = null;
     modalInputRef.value = "";
   } else {
