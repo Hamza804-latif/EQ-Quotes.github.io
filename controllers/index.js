@@ -19,7 +19,7 @@ function Submit(event) {
   if (modalInputRef.value) {
     console.log(modalInputRef.value);
     localStorage.setItem("zip", modalInputRef.value);
-    window.location.href = `/EQ-QUOTES/${page ? page : "notfound.html"}?zip=${
+    window.location.href = `${page ? page : "notfound.html"}?zip=${
       modalInputRef.value
     }`;
     page = null;
