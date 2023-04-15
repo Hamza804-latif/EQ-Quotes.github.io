@@ -3,6 +3,8 @@ let modalboxRef = document.querySelector(".box");
 let modalInputRef = document.querySelector(".zipInput");
 let page;
 
+console.log(typeof modalInputRef.value);
+
 modalboxRef.addEventListener("click", (event) => {
   event.stopPropagation();
 });
@@ -16,7 +18,7 @@ function ChangeDisplay() {
   crossBtnRef.classList.add("hide");
 }
 function Submit(event) {
-  if (modalInputRef.value) {
+  if (modalInputRef.value && modalInputRef.value.length < 6) {
     console.log(modalInputRef.value);
     localStorage.setItem("zip", modalInputRef.value);
     window.location.href = `https://hamza804-latif.github.io/EQ-Quotes.github.io/${
@@ -26,6 +28,6 @@ function Submit(event) {
     modalInputRef.value = "";
     crossBtnRef.classList.add("hide");
   } else {
-    console.log("please enter values");
+    alert("please enter values or value shoul less than 6");
   }
 }
