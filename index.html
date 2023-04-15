@@ -171,13 +171,14 @@
     <!-- modal -->
 
     <div class="modal hide" onclick="ChangeDisplay()">
-        <form class="box" onsubmit="Submit(event)">
+        <div class="box">
             <h3>Enter Your Zip Code</h3>
             <p>Get Free Quote</p>
             <input type="number" placeholder="Enter Zip Code..." class="zipInput">
-            <button type="submit">Submit</button>
+            <p class="error hide" style="color: red;">Zip Code is not valid</p>
+            <button onclick="Submit(event)">Submit</button>
             <span class="icon" onclick="ChangeDisplay()"><i class="bi bi-x-lg"></i></span>
-        </form>
+        </div>
     </div>
 </body>
 <script src="./controllers/index.js"></script>
