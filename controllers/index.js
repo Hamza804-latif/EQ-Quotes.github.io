@@ -14,6 +14,7 @@ function ShowModal(pageName) {
   page = pageName;
   modalInputRef.value = "";
   crossBtnRef.classList.remove("hide");
+  error.classList.remove("hide");
 }
 function ChangeDisplay() {
   crossBtnRef.classList.add("hide");
