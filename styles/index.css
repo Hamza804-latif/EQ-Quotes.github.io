@@ -744,6 +744,10 @@ footer .content .data .para {
   footer .content {
     width: 100%;
   }
+
+  .servicesBtns button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -855,6 +859,12 @@ footer .content .data .para {
     -webkit-gap: 8px;
   }
 
+  .servicesBtns button {
+    width: initial;
+  }
+
+
+
   footer .content {
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
@@ -954,6 +964,10 @@ footer .content .data .para {
     display: flex;
     gap: 8px;
     -webkit-gap: 8px;
+  }
+
+  .servicesBtns button {
+    width: 100%;
   }
 }
 
