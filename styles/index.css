@@ -20,10 +20,12 @@ nav {
   font-weight: 200;
   color: white;
 }
+
 .nav-container h1 {
   font-size: 2rem;
   cursor: pointer;
 }
+
 .nav-container h1 a {
   color: white;
 }
@@ -37,6 +39,7 @@ nav {
   align-items: center;
   padding: 40px 0;
 }
+
 .hero::after {
   content: "";
   background: url("../images/heroPic.jpg");
@@ -50,6 +53,7 @@ nav {
   position: absolute;
   z-index: 1;
 }
+
 .hero::before {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
@@ -60,6 +64,7 @@ nav {
   position: absolute;
   z-index: 2;
 }
+
 .hero .content {
   position: relative;
   z-index: 3;
@@ -70,6 +75,7 @@ nav {
   gap: 40px;
   -webkit-gap: 40px;
 }
+
 .hero .content h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -81,6 +87,7 @@ nav {
   color: #ffffff;
   max-width: 20ch;
 }
+
 .hero .content p {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -95,17 +102,20 @@ nav {
 .hero .hero-btn {
   align-self: center;
 }
+
 /* hero section ended */
 /* intro section start */
 .introSection {
   background-color: #ebf3f698;
   height: fit-content;
 }
+
 .intro {
   display: flex;
   align-items: center;
   padding: 60px 0;
 }
+
 .left {
   display: flex;
   flex-direction: column;
@@ -114,6 +124,7 @@ nav {
   gap: 30px;
   -webkit-gap: 30px;
 }
+
 .left h2 {
   font-family: "Montserrat";
   font-style: normal;
@@ -124,6 +135,7 @@ nav {
   color: #252b42;
   max-width: 18ch;
 }
+
 .left p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -134,6 +146,7 @@ nav {
   letter-spacing: 0.2px;
   color: #737373;
 }
+
 .right {
   flex: 1.3;
   background: url("../images/intro-img2.jpg");
@@ -143,18 +156,21 @@ nav {
   background-size: cover;
   border-radius: 35px;
 }
+
 .list {
   display: flex;
   flex-direction: column;
   gap: 20px;
   -webkit-gap: 20px;
 }
+
 .list .list-child {
   display: flex;
   align-items: center;
   gap: 8px;
   -webkit-gap: 8px;
 }
+
 .list .list-child .img {
   background-color: #a5d8f6;
   border-radius: 50%;
@@ -164,6 +180,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
 .list .list-child p {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -190,6 +207,7 @@ nav {
   gap: 4px;
   -webkit-gap: 4px;
 }
+
 .uppersection h2 {
   font-family: "Montserrat";
   font-style: normal;
@@ -200,6 +218,7 @@ nav {
   color: #252b42;
   max-width: 18ch;
 }
+
 .uppersection h3 {
   font-family: "Montserrat";
   font-style: normal;
@@ -209,6 +228,7 @@ nav {
   letter-spacing: 0.2px;
   max-width: 18ch;
 }
+
 .uppersection p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -220,12 +240,14 @@ nav {
   color: #737373;
   text-align: center;
 }
+
 .lowersection {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   -webkit-gap: 20px;
 }
+
 .servicelower {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -233,6 +255,7 @@ nav {
   -webkit-gap: 20px;
   grid-gap: 20px;
 }
+
 .card2 {
   display: flex;
   gap: 20px;
@@ -241,32 +264,32 @@ nav {
   background-color: initial;
 
   background: rgb(210, 235, 249);
-  background: -moz-linear-gradient(
-    top,
-    rgba(210, 235, 249, 1) 0%,
-    rgba(254, 255, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(210, 235, 249, 1) 0%,
-    rgba(254, 255, 255, 1) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgba(210, 235, 249, 1) 0%,
-    rgba(254, 255, 255, 1) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ebf9', endColorstr='#feffff',GradientType=0 ); /* IE6-9 */
+  background: -moz-linear-gradient(top,
+      rgba(210, 235, 249, 1) 0%,
+      rgba(254, 255, 255, 1) 100%);
+  background: -webkit-linear-gradient(top,
+      rgba(210, 235, 249, 1) 0%,
+      rgba(254, 255, 255, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,
+      rgba(210, 235, 249, 1) 0%,
+      rgba(254, 255, 255, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2ebf9', endColorstr='#feffff', GradientType=0);
+  /* IE6-9 */
 }
+
 .card2 ul {
   list-style-position: inside;
 }
+
 .card2 ul li {
   list-style-position: outside;
   margin-left: 1em;
   margin-bottom: 10px;
   color: #737373;
 }
+
 .lowersection .card {
   display: flex;
   flex-direction: column;
@@ -276,6 +299,7 @@ nav {
   gap: 12px;
   -webkit-gap: 12px;
 }
+
 .lowersection .card h3 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -285,6 +309,7 @@ nav {
   letter-spacing: 0.1px;
   color: #252b42;
 }
+
 .lowersection .card p {
   font-family: "Montserrat";
   font-style: normal;
@@ -299,15 +324,18 @@ nav {
 
   color: #737373;
 }
+
 .lowersection .card img {
   width: 35px;
   height: 35px;
 }
+
 .servicesBtns {
   display: flex;
   gap: 8px;
   -webkit-gap: 8px;
 }
+
 .servicesBtns button {
   padding: 14px 10px;
   font-size: 14px;
@@ -319,6 +347,7 @@ nav {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
+
 .servicesBtns button:nth-child(1) {
   color: white;
   background-color: #23a6f0;
@@ -330,6 +359,7 @@ footer {
   display: flex;
   padding: 30px;
 }
+
 footer .content {
   display: grid;
   align-content: space-between;
@@ -338,16 +368,19 @@ footer .content {
   align-items: center;
   justify-items: center;
 }
+
 footer .content .logo h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 35px;
 }
+
 footer .content .data {
   display: flex;
   flex-direction: column;
   gap: 8px;
   -webkit-gap: 8px;
 }
+
 footer .content .data h2 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -363,22 +396,27 @@ footer .content .data h2 {
 
   color: #252b42;
 }
+
 footer .content .data:nth-child(3) {
   align-self: flex-start;
 }
+
 footer .content .data:nth-child(3) .number {
   display: flex;
   align-items: center;
   gap: 0px;
   -webkit-gap: 0px;
 }
+
 footer .content .data:nth-child(3) img {
   width: 30px;
   height: 30px;
 }
+
 footer .content .data:nth-child(2) a {
   text-decoration: underline !important;
 }
+
 footer .content .data .para {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -390,6 +428,7 @@ footer .content .data .para {
   color: #737373;
   cursor: pointer;
 }
+
 /* modal styles */
 .modal {
   background-color: black;
@@ -400,6 +439,7 @@ footer .content .data .para {
   z-index: 10;
   top: 0;
 }
+
 .box {
   max-width: 465px;
   background-color: hsl(0, 0%, 100%);
@@ -414,6 +454,7 @@ footer .content .data .para {
   position: relative;
   z-index: 100;
 }
+
 .box h3 {
   font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
@@ -426,6 +467,7 @@ footer .content .data .para {
   margin-bottom: 8px;
   text-align: center;
 }
+
 .box p {
   font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
@@ -438,6 +480,7 @@ footer .content .data .para {
   margin-bottom: 24px;
   text-align: center;
 }
+
 .box input {
   background: #ffffff;
   border: 1px solid #d1d1d1;
@@ -445,6 +488,7 @@ footer .content .data .para {
   margin-bottom: 16px;
   padding: 13px 16px;
 }
+
 .box input::placeholder {
   font-family: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
@@ -459,6 +503,7 @@ footer .content .data .para {
   align-items: center;
   color: #acacac;
 }
+
 .box button {
   background: #4f4f4f;
   border-radius: 8px;
@@ -476,6 +521,7 @@ footer .content .data .para {
   color: #f5f5f5;
   cursor: pointer;
 }
+
 .icon {
   position: absolute;
   background: #e5e5e5;
@@ -490,6 +536,7 @@ footer .content .data .para {
   right: 20px;
   cursor: pointer;
 }
+
 .hide {
   display: none;
 }
@@ -500,14 +547,15 @@ footer .content .data .para {
     height: 55vh;
   }
 }
-@media (max-width: 1440px) {
-}
+
+@media (max-width: 1440px) {}
 
 @media (max-width: 1280px) {
   .intro {
     gap: 60px;
     -webkit-gap: 60px;
   }
+
   .left {
     display: flex;
     flex-direction: column;
@@ -516,6 +564,7 @@ footer .content .data .para {
     gap: 30px;
     -webkit-gap: 30px;
   }
+
   .left h2 {
     font-weight: 700;
     font-size: 40px;
@@ -523,15 +572,18 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     max-width: 18ch;
   }
+
   .left p {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
   }
+
   .right {
     flex: 0.8;
     /* height: ; */
   }
+
   .servicelower {
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
@@ -548,6 +600,7 @@ footer .content .data .para {
     -webkit-gap: 30px;
     padding: 60px 30px;
   }
+
   .left {
     display: flex;
     flex-direction: column;
@@ -556,6 +609,7 @@ footer .content .data .para {
     gap: 20px;
     -webkit-gap: 20px;
   }
+
   .left h2 {
     font-weight: 700;
     font-size: 40px;
@@ -563,15 +617,18 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     max-width: 18ch;
   }
+
   .left p {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
   }
+
   .right {
     flex: 0.8;
     /* height: ; */
   }
+
   /* feature section start */
 
   .features {
@@ -582,6 +639,7 @@ footer .content .data .para {
 
     padding: 60px 10px;
   }
+
   .uppersection {
     display: flex;
     flex-direction: column;
@@ -589,10 +647,12 @@ footer .content .data .para {
     gap: 4px;
     -webkit-gap: 4px;
   }
+
   .uppersection h2 {
     font-size: 40px;
     line-height: 50px;
   }
+
   .uppersection h3 {
     font-family: "Montserrat";
     font-style: normal;
@@ -602,6 +662,7 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     max-width: 18ch;
   }
+
   .uppersection p {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
@@ -613,6 +674,7 @@ footer .content .data .para {
     color: #737373;
     text-align: center;
   }
+
   .lowersection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -620,12 +682,14 @@ footer .content .data .para {
     -webkit-gap: 18px;
     grid-gap: 18px;
   }
+
   .lowersection .card {
     padding: 14px 26px 14px 20px;
     gap: 14px;
     -webkit-gap: 14px;
     grid-gap: 14px;
   }
+
   .lowersection .card h3 {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
@@ -635,6 +699,7 @@ footer .content .data .para {
     letter-spacing: 0.1px;
     color: #252b42;
   }
+
   .lowersection .card p {
     font-family: "Montserrat";
     font-style: normal;
@@ -644,16 +709,18 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     color: #363535;
   }
+
   .lowersection .card img {
     width: 32px;
     height: 32px;
   }
+
   .servicesBtns {
     display: flex;
-    flex-direction: column;
     gap: 8px;
     -webkit-gap: 8px;
   }
+
   .servicesBtns button {
     padding: 14px 10px;
     font-size: 14px;
@@ -664,6 +731,7 @@ footer .content .data .para {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
   }
+
   .servicelower {
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
@@ -672,6 +740,7 @@ footer .content .data .para {
     -webkit-gap: 20px;
     grid-gap: 20px;
   }
+
   footer .content {
     width: 100%;
   }
@@ -681,25 +750,30 @@ footer .content .data .para {
   .nav-container {
     font-size: 1.3rem;
   }
+
   .hero .content h1 {
     font-weight: 700;
     font-size: 50px;
     line-height: 70px;
   }
+
   .hero .content p {
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
   }
+
   .hero .content button {
     padding: 14px 34px;
     font-weight: 600;
   }
+
   .intro {
     flex-direction: column;
     align-items: flex-start;
     padding: 60px 15px;
   }
+
   .left {
     display: flex;
     flex-direction: column;
@@ -708,6 +782,7 @@ footer .content .data .para {
     gap: 20px;
     -webkit-gap: 20px;
   }
+
   .left h2 {
     font-weight: 700;
     font-size: 40px;
@@ -715,11 +790,13 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     max-width: 18ch;
   }
+
   .left p {
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
   }
+
   .right {
     flex: initial;
     width: 100%;
@@ -729,17 +806,20 @@ footer .content .data .para {
     /* min-height: auto; */
     order: -1;
   }
+
   .list {
     display: flex;
     flex-direction: column;
     gap: 15px;
     -webkit-gap: 15px;
   }
+
   .list .list-child {
     display: flex;
     gap: 6px;
     -webkit-gap: 6px;
   }
+
   .list .list-child .img {
     background-color: #a5d8f6;
     border-radius: 50%;
@@ -749,6 +829,7 @@ footer .content .data .para {
     justify-content: center;
     align-items: center;
   }
+
   .list .list-child p {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -757,6 +838,7 @@ footer .content .data .para {
     letter-spacing: 0.2px;
     color: #2b2a2a;
   }
+
   .lowersection {
     display: grid;
     grid-template-columns: repeat(1, 0.8fr);
@@ -765,16 +847,19 @@ footer .content .data .para {
     grid-gap: 18px;
     justify-content: center;
   }
+
   .servicesBtns {
     display: flex;
     flex-direction: row;
     gap: 8px;
     -webkit-gap: 8px;
   }
+
   footer .content {
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
   }
+
   footer .content .data:nth-child(3) {
     align-self: inherit;
   }
@@ -788,54 +873,66 @@ footer .content .data .para {
     gap: 10px;
     -webkit-gap: 10px;
   }
+
   .hero .content {
     gap: 28px;
     -webkit-gap: 28px;
     padding: 0 20px;
   }
+
   .hero .content h1 {
     font-weight: 700;
     font-size: 40px;
     line-height: 60px;
   }
+
   .hero .content p {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
   }
+
   .hero .content button {
     padding: 10px 25px;
     font-weight: 500;
   }
+
   .intro {
     padding: 60px 0;
   }
+
   .left {
     flex: 1;
     gap: 20px;
     -webkit-gap: 20px;
     padding: 0 10px;
   }
+
   .left h2 {
     font-size: 30px;
     line-height: 40px;
   }
+
   .left p {
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;
   }
+
   .list .list-child {
     gap: 8px;
     -webkit-gap: 8px;
   }
+
   .list .list-child .img {
     height: 28px;
     width: 28px;
   }
+
   .list .list-child p {
     font-size: 15px;
   }
+
   .features {
     display: flex;
     flex-direction: column;
@@ -843,6 +940,7 @@ footer .content .data .para {
     -webkit-gap: 30px;
     padding: 60px 10px;
   }
+
   .lowersection {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -851,13 +949,14 @@ footer .content .data .para {
     grid-gap: 18px;
     justify-content: center;
   }
+
   .servicesBtns {
     display: flex;
-    flex-direction: column;
     gap: 8px;
     -webkit-gap: 8px;
   }
 }
+
 /* @media (max-width: 320px) {
   .nav-container h1 {
     font-size: 1.7rem;
