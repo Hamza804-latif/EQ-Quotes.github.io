@@ -23,36 +23,37 @@
     </nav>
     <div class="form-main">
         <div class="img"></div>
-        <form action="" class="form">
+        <form onsubmit="SendMessage(event)" class="form">
             <div class="form-child">
                 <label for="">
                     First Name
                 </label>
-                <input type="text" placeholder="Your First Name">
+                <input type="text" placeholder="Your First Name" name="firstname" onchange="GetFormData(event)">
             </div>
             <div class="form-child">
                 <label for="">
                     Last Name
                 </label>
-                <input type="text" placeholder="Your Last Name">
+                <input type="text" placeholder="Your Last Name" name="lastname" onchange="GetFormData(event)">
             </div>
-            <div class="form-child">
+            <div class=" form-child">
                 <label for="">
                     Email
                 </label>
-                <input type="email" placeholder="Your Email">
+                <input type="email" placeholder="Your Email" name="email" onchange="GetFormData(event)">
             </div>
-            <div class="form-child">
+            <div class=" form-child">
                 <label for="">
                     Phone Number
                 </label>
-                <input type="number" placeholder="Your Phone Number">
+                <input type="number" placeholder="Phone # i.e. (555) 555-1234" name="phonenumber"
+                    onchange="GetFormData(event)">
             </div>
             <div class="form-child">
                 <label for="">
                     Your State
                 </label>
-                <input type="text" placeholder="Your State">
+                <input type="text" placeholder="Your State" name="state" onchange="GetFormData(event)">
             </div>
             <div class="form-child">
                 <label>
@@ -61,11 +62,11 @@
                 <div class="field-main">
                     <div class="field">
                         <label for="">Yes</label>
-                        <input type="radio" value="yes" name="earn">
+                        <input type="radio" value=true name="earn" onchange="GetFormData(event)">
                     </div>
                     <div class="field">
                         <label for="">No</label>
-                        <input type="radio" value="no" name="earn">
+                        <input type="radio" value=false name="earn" checked onchange="GetFormData(event)">
                     </div>
 
                 </div>
@@ -76,9 +77,9 @@
                 <label for="">
                     Your Credit Score?
                 </label>
-                <input type="text" placeholder="Credit Score ">
+                <input type="text" placeholder="Credit Score" name="creditscore" onchange="GetFormData(event)">
             </div>
-            <button>Send Message</button>
+            <button type="submit">Send Message</button>
         </form>
     </div>
     <footer>
@@ -101,5 +102,6 @@
         </div>
     </footer>
 </body>
+<script src="controllers/index.js"></script>
 
 </html>
