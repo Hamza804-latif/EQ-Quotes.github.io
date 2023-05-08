@@ -11,6 +11,7 @@ let formData = {
   state: "",
   earn: "false",
   creditscore: "",
+  zipcode: "",
 };
 
 modalboxRef.addEventListener("click", (event) => {
@@ -77,11 +78,16 @@ function GetFormData(event) {
 
 async function SendMessage(event) {
   event.preventDefault();
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  let value = params.zip;
+  formData = { ...formData, zipcode: value };
+  console.log(formData);
   let { firstname, lastname, email, phonenumber, state, creditscore } =
     formData;
   let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   let numberFormat = /^[0-9]{3,3}-?[0-9]{3,3}-?[0-9]{4,4}$/;
-
   if (
     (firstname &&
       lastname &&
@@ -91,14 +97,53 @@ async function SendMessage(event) {
       numberFormat.test(phonenumber),
     state && creditscore)
   ) {
-    let data = await fetch("http://localhost:5000/clients/save", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    console.log(data);
+    switch (event?.target?.name) {
+      case "homei":
+        let homeiData = await fetch(
+          "http://localhost:5000/agent/homeinsurance/save",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+        break;
+      case "homes":
+        let homesData = await fetch(
+          "http://localhost:5000/agent/homesecurity/save",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+        break;
+      case "homew":
+        let homewData = await fetch(
+          "http://localhost:5000/agent/homewarranty/save",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+        break;
+      case "solar":
+        let solarData = await fetch("http://localhost:5000/agent/solar/save", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        break;
+    }
   } else {
     alert("please fill valid data");
   }

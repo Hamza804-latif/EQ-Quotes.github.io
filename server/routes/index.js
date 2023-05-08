@@ -4,7 +4,7 @@ import controllers from "../controllers/index.js";
 const router = express.Router();
 
 const routes = () => {
-  router.use("/clients", controllers());
+  router.use("/agent", controllers());
   return router;
 };
 export default routes;
