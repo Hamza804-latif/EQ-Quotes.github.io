@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar | Agent</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: goldenrod;
+            background-color: rgba(218, 165, 32, 0.145);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .logout {
+            margin-left: auto;
+            border: none;
+            outline: 1px solid rgba(220, 20, 60, 0.264);
+            color: crimson;
+            padding: 6px;
+            cursor: pointer;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        .searchMain {
+            display: flex;
+            width: fit-content;
+            margin: 40px auto;
+        }
+
+        .searchMain .search {
+            padding: 12px 8px;
+            width: 500px;
+            border: none;
+            outline: 1px solid crimson;
+            font-size: 18px;
+        }
+
+        .searchMain .search:focus {
+            outline: 2px solid crimson;
+        }
+
+        .searchMain button {
+            color: crimson;
+            border-radius: 5px;
+            border: none;
+            outline: 1px solid rgba(220, 20, 60, 0.273);
+            background-color: rgba(220, 20, 60, 0.06);
+            padding: 12px;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body onload="Load('solar')">
+    <nav>
+        <a href="/agentHomeInsurance.html">Home Insurance</a>
+        <a href="/agentHomeWarranty.html">Home Warranty</a>
+        <a href="/agentHomeSecurity.html">Home Security</a>
+        <a href="/agentSolar.html">Solar</a>
+        <span class="logout">Logout</span>
+
+    </nav>
+    <h1>Solar</h1>
+    <div class="searchMain">
+        <input type="text" class="search" placeholder="Search by phonenumber..." onchange="Search('solar')">
+        <button onclick="Search('solar')">Search</button>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Universal Lead Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone #</th>
+                <th>Email</th>
+                <th>Zip Code</th>
+                <th>State</th>
+                <th>Time</th>
+            </tr>
+        <tbody class="tableBody"></tbody>
+        </thead>
+    </table>
+</body>
+<script src="./admins/agents/agents.js"></script>
+
+</html>

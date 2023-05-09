@@ -89,13 +89,12 @@ async function SendMessage(event) {
   let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   let numberFormat = /^[0-9]{3,3}-?[0-9]{3,3}-?[0-9]{4,4}$/;
   if (
-    (firstname &&
-      lastname &&
-      email &&
-      mailformat.test(email) &&
-      phonenumber &&
-      numberFormat.test(phonenumber),
-    state && creditscore)
+    firstname &&
+    lastname &&
+    email &&
+    mailformat.test(email) &&
+    state &&
+    creditscore
   ) {
     switch (event?.target?.name) {
       case "homei":
