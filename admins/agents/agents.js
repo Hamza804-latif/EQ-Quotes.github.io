@@ -2,7 +2,7 @@ let data = [];
 let table = "";
 let tableBodyRef = document.querySelector(".tableBody");
 const Load = async function (route) {
-  console.log(route);
+  CheckToken();
   let res = await fetch(`http://localhost:5000/agent/${route}`);
   data = await res.json();
   for (var item of data) {
@@ -41,4 +41,32 @@ const Search = async (route) => {
       </tr>`;
   }
   tableBodyRef.innerHTML = table;
+};
+const Logout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "../../agents.html";
+};
+
+let CheckToken = async () => {
+  let token = localStorage.getItem("token");
+  if (token) {
+    try {
+      let res = await fetch("http://localhost:5000/auth/verifytoken", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+      let data = await res.json();
+      if (data?.status == 200) {
+      } else {
+        window.location.href = "../../agents.html";
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  } else {
+    window.location.href = "../../agents.html";
+  }
 };
