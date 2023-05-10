@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent Login</title>
+    <title>Super Admin Login</title>
     <style>
         * {
             padding: 0;
@@ -72,14 +72,14 @@
     </style>
 </head>
 
-<body onload="LoginLoad('token')">
+<body onload="LoginLoad(`token2`)">
     <div class="mainForm">
-        <h1>Agent | Login</h1>
+        <h1>Super Admin | Login</h1>
         <div class="inputs">
             <input type="text" placeholder="Your Username..." class="username">
             <input type="password" placeholder="Your Password..." class="password">
         </div>
-        <button onclick="Login('agent','token')">Login</button>
+        <button onclick="Login(`admin`,`token2`)">Login</button>
     </div>
 </body>
 <script src="admins/agents/agentLogin.js"></script>

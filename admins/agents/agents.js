@@ -1,4 +1,5 @@
 let data = [];
+let role = "";
 let table = "";
 let tableBodyRef = document.querySelector(".tableBody");
 const Load = async function (route) {

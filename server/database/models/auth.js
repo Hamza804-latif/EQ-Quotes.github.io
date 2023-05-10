@@ -6,3 +6,4 @@ const AgentLoginSchema = new mongoose.Schema({
 });
 
 export const AgentAuthModel = mongoose.model("AgentLogin", AgentLoginSchema);
+export const AdminAuthModel = mongoose.model("AdminLogin", AgentLoginSchema);
