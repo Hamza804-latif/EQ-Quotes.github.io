@@ -13,7 +13,11 @@ const LoginLoad = async (key) => {
     });
     let data = await res.json();
     if (data.status == 200) {
-      window.location.href = "../../agentHomeInsurance.html";
+      if (key == "token") {
+        window.location.href = "../../agentHomeInsurance.html";
+      } else {
+        window.location.href = "../../adminHomeInsurance.html";
+      }
     } else {
       alert("Session expired login again");
     }

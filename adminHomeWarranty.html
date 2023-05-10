@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Security | Agent</title>
+    <title>Home Warranty | Agent</title>
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+
 
         h1 {
             text-align: center;
@@ -83,21 +84,41 @@
             padding: 12px;
             cursor: pointer
         }
+
+        .buttons {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .buttons button {
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: transparent;
+            border: none;
+            outline: 1px solid green;
+            color: green;
+        }
     </style>
 </head>
 
-<body onload="Load('homesecurity')">
+<body onload="Load('homewarranty')">
     <nav>
-        <a href="/agentHomeInsurance.html">Home Insurance</a>
-        <a href="/agentHomeWarranty.html">Home Warranty</a>
-        <a href="/agentHomeSecurity.html">Home Security</a>
-        <a href="/agentSolar.html">Solar</a>
+
+        <a href="/adminHomeInsurance.html">Home Insurance</a>
+        <a href="/adminHomeWarranty.html">Home Warranty</a>
+        <a href="/adminHomeSecurity.html">Home Security</a>
+        <a href="/adminSolar.html">Solar</a>
+
         <span class="logout" onclick="Logout()">Logout</span>
+
     </nav>
-    <h1>Home Security</h1>
+
+    <h1>Home Warranty</h1>
     <div class="searchMain">
-        <input type="text" class="search" placeholder="Search by phonenumber..." onchange="Search('homesecurity')">
-        <button onclick="Search('homesecurity')">Search</button>
+        <input type="text" class="search" placeholder="Search by phonenumber..." onchange="Search('homewarranty')">
+        <button onclick="Search('homewarranty')">Search</button>
     </div>
     <table border="1">
         <thead>
@@ -110,11 +131,13 @@
                 <th>Zip Code</th>
                 <th>State</th>
                 <th>Time</th>
+                <th>Actions</th>
+
             </tr>
         <tbody class="tableBody"></tbody>
         </thead>
     </table>
 </body>
-<script src="./admins/agents/agents.js"></script>
+<script src="./admins/superadmin/admin.js"></script>
 
 </html>

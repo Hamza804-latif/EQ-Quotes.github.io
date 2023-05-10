@@ -1,8 +1,10 @@
 let data = [];
-let role = "";
+let path = "";
+let id = "";
 let table = "";
 let tableBodyRef = document.querySelector(".tableBody");
 const Load = async function (route) {
+  path = route;
   CheckToken();
   let res = await fetch(`http://localhost:5000/agent/${route}`);
   data = await res.json();
@@ -19,6 +21,8 @@ const Load = async function (route) {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.createdAt}</td>
+        <td class='buttons'><button onclick="Delete()">Delete</button><button>Edit</button></td>
+
       </tr>`;
     }
     tableBodyRef.innerHTML = table;
@@ -26,6 +30,7 @@ const Load = async function (route) {
 };
 
 const Search = async (route) => {
+  path = route;
   let searchRef = document.querySelector(".search");
   let res = await fetch(
     `http://localhost:5000/agent/${route}/${searchRef.value}`
@@ -46,18 +51,19 @@ const Search = async (route) => {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.createdAt}</td>
+        <td class='buttons'><button onclick="Delete()">Delete</button><button>Edit</button></td>
       </tr>`;
     }
     tableBodyRef.innerHTML = table;
   }
 };
 const Logout = () => {
-  localStorage.removeItem("token");
-  window.location.href = "../../agents.html";
+  localStorage.removeItem("token2");
+  window.location.href = "../../superadmin.html";
 };
 
 let CheckToken = async () => {
-  let token = localStorage.getItem("token");
+  let token = localStorage.getItem("token2");
   if (token) {
     try {
       let res = await fetch("http://localhost:5000/auth/verifytoken", {
@@ -70,12 +76,22 @@ let CheckToken = async () => {
       let data = await res.json();
       if (data?.status == 200) {
       } else {
-        window.location.href = "../../agents.html";
+        window.location.href = "../../superadmin.html";
       }
     } catch (error) {
       alert(error.message);
     }
   } else {
-    window.location.href = "../../agents.html";
+    window.location.href = "../../superadmin.html";
   }
+};
+const Delete = async (id) => {
+  console.log(id);
+  // try {
+  //   let res = await fetch(`http://localhost:5000/agent/${path}/${id}`);
+  //   let data = await res.json();
+  //   console.log(data);
+  // } catch (error) {
+  //   alert(error.message);
+  // }
 };

@@ -27,3 +27,17 @@ export const SaveClient = async (req, resp) => {
   let savedData = await homeInsuranceSchema.save();
   console.log(savedData);
 };
+
+export const DeleteClient = async (req, resp) => {
+  try {
+    let deletedData = await homeInsurance.findByIdAndDelete(req?.params?.id);
+    if (deletedData) {
+      return resp.json({ status: 200, msg: "Data Deleted Successfully" });
+    } else {
+      return resp.json({ status: 200, msg: "Data not found" });
+    }
+  } catch (error) {
+    console.log(error.stack);
+    return resp.json({ status: 500, msg: "Internal Server Error" });
+  }
+};
