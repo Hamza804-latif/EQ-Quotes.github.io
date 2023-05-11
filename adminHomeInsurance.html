@@ -100,19 +100,88 @@
             outline: 1px solid green;
             color: green;
         }
+
+        .editDataMain {
+            height: 100vh;
+            width: 100vw;
+            opacity: 1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .editDataMain h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .editData {
+            height: 80vh;
+            width: 70vw;
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 1);
+            opacity: 1;
+            background-color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+        }
+
+        .editData .inputs {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 16px;
+        }
+
+        .editData .inputs input {
+            padding: 14px 8px;
+            border: none;
+            outline: 1px solid crimson;
+            font-size: 18px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .editData .inputs input:focus {
+            outline: 2px solid crimson;
+        }
+
+        .editData .inputs button {
+            align-self: flex-start;
+            padding: 14px 18px;
+            background: rgba(239, 228, 230, 0.128);
+            border: none;
+            outline: 1px solid crimson;
+            color: crimson;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .editData .inputs button:hover {
+            background: rgba(248, 160, 176, 0.317);
+            font-weight: bolder;
+
+        }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
 <body onload="Load('homeinsurance')">
     <nav>
-
         <a href="/adminHomeInsurance.html">Home Insurance</a>
         <a href="/adminHomeWarranty.html">Home Warranty</a>
         <a href="/adminHomeSecurity.html">Home Security</a>
         <a href="/adminSolar.html">Solar</a>
-
         <span class="logout" onclick="Logout()">Logout</span>
-
     </nav>
     <h1>Home Insurance</h1>
     <div class="searchMain">
@@ -129,13 +198,27 @@
                 <th>Email</th>
                 <th>Zip Code</th>
                 <th>State</th>
+                <th>Home Owner</th>
                 <th>Time</th>
                 <th>Actions</th>
             </tr>
         <tbody class="tableBody"></tbody>
         </thead>
     </table>
-
+    <div class="editDataMain hide">
+        <div class="editData">
+            <h1>Edit Data</h1>
+            <div class="inputs">
+                <input type="text" placeholder="Enter Firstname">
+                <input type="text" placeholder="Enter Lastname">
+                <input type="text" placeholder="Enter Zipcode">
+                <input type="text" placeholder="Enter Phonenumber">
+                <input type="text" placeholder="Enter Email">
+                <input type="text" placeholder="Enter State">
+                <button onclick="UpdateData()">Update</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./admins/superadmin/admin.js"></script>
 

@@ -20,8 +20,11 @@ const Load = async function (route) {
         <td>${item.email}</td>
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
+        <td>${item.earn == "true" ? "Yes" : "No"}</td>
         <td>${item.createdAt}</td>
-        <td class='buttons'><button onclick="Delete('${item._id}')">Delete</button><button>Edit</button></td>
+        <td class='buttons'><button onclick="Delete('${
+          item._id
+        }')">Delete</button><button onclick="Edit()">Edit</button></td>
 
       </tr>`;
     }
@@ -50,8 +53,11 @@ const Search = async (route) => {
         <td>${item.email}</td>
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
+        <td>${item.earn == "true" ? "Yes" : "No"}</td>
         <td>${item.createdAt}</td>
-        <td class='buttons'><button onclick="Delete('${item._id}')">Delete</button><button>Edit</button></td>
+        <td class='buttons'><button onclick="Delete('${
+          item._id
+        }')">Delete</button><button onclick="Edit()">Edit</button></td>
       </tr>`;
     }
     tableBodyRef.innerHTML = table;
@@ -98,4 +104,13 @@ const Delete = async (id) => {
   } catch (error) {
     alert(error.message);
   }
+};
+
+const Edit = () => {
+  let editDataMain = document.querySelector(".editDataMain");
+  editDataMain.classList.remove("hide");
+};
+const UpdateData = () => {
+  let editDataMain = document.querySelector(".editDataMain");
+  editDataMain.classList.add("hide");
 };
