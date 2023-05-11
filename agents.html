@@ -19,6 +19,7 @@
             align-items: center;
             height: 100vh;
             width: 100%;
+            position: relative;
         }
 
         .mainForm {
@@ -69,6 +70,19 @@
             border: 1px solid rgba(220, 20, 60, 0.277);
             background-color: rgba(220, 20, 60, 0.082);
         }
+
+        .adminbtn {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 7px;
+            outline: 1px solid crimson;
+            background-color: rgba(253, 201, 211, 0.106);
+            color: crimson;
+            cursor: pointer;
+            text-decoration: none;
+
+        }
     </style>
 </head>
 
@@ -81,6 +95,7 @@
         </div>
         <button onclick="Login('agent','token')">Login</button>
     </div>
+    <a class="adminbtn" href="./superadmin.html">Super Admin</a>
 </body>
 <script src="admins/agents/agentLogin.js"></script>
 

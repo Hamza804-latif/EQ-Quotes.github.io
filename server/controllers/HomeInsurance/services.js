@@ -29,6 +29,7 @@ export const SaveClient = async (req, resp) => {
 };
 
 export const DeleteClient = async (req, resp) => {
+  console.log("in");
   try {
     let deletedData = await homeInsurance.findByIdAndDelete(req?.params?.id);
     if (deletedData) {

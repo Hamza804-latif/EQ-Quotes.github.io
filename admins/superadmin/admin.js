@@ -21,7 +21,7 @@ const Load = async function (route) {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.createdAt}</td>
-        <td class='buttons'><button onclick="Delete()">Delete</button><button>Edit</button></td>
+        <td class='buttons'><button onclick="Delete('${item._id}')">Delete</button><button>Edit</button></td>
 
       </tr>`;
     }
@@ -51,7 +51,7 @@ const Search = async (route) => {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.createdAt}</td>
-        <td class='buttons'><button onclick="Delete()">Delete</button><button>Edit</button></td>
+        <td class='buttons'><button onclick="Delete('${item._id}')">Delete</button><button>Edit</button></td>
       </tr>`;
     }
     tableBodyRef.innerHTML = table;
@@ -86,12 +86,16 @@ let CheckToken = async () => {
   }
 };
 const Delete = async (id) => {
-  console.log(id);
-  // try {
-  //   let res = await fetch(`http://localhost:5000/agent/${path}/${id}`);
-  //   let data = await res.json();
-  //   console.log(data);
-  // } catch (error) {
-  //   alert(error.message);
-  // }
+  try {
+    let res = await fetch(`http://localhost:5000/agent/${path}/${id}`, {
+      method: "DELETE",
+    });
+    let data = await res.json();
+    if (data.status == 200) {
+      alert(data.msg);
+      location.reload();
+    }
+  } catch (error) {
+    alert(error.message);
+  }
 };
