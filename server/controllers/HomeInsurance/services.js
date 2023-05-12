@@ -23,13 +23,19 @@ export const SearchClient = async (req, resp) => {
   }
 };
 export const SaveClient = async (req, resp) => {
-  let homeInsuranceSchema = new homeInsurance(req.body);
-  let savedData = await homeInsuranceSchema.save();
-  console.log(savedData);
+  try {
+    let homeSchema = new homeInsurance(req.body);
+    let savedData = await homeSchema.save();
+    if (savedData)
+      return resp.json({ status: 200, msg: "Data saved Successfully" });
+    return resp.json({ status: 500, msg: "Something went wrong" });
+  } catch (error) {
+    console.log(error.stack);
+    return resp.json({ status: 500, msg: "Internal Server Error" });
+  }
 };
 
 export const DeleteClient = async (req, resp) => {
-  console.log("in");
   try {
     let deletedData = await homeInsurance.findByIdAndDelete(req?.params?.id);
     if (deletedData) {
@@ -40,5 +46,21 @@ export const DeleteClient = async (req, resp) => {
   } catch (error) {
     console.log(error.stack);
     return resp.json({ status: 500, msg: "Internal Server Error" });
+  }
+};
+
+export const UpdateData = async (req, resp) => {
+  try {
+    let update = await homeInsurance.updateOne(
+      { _id: req.params.id },
+      { $set: req.body }
+    );
+    console.log(update);
+    if (update?.modifiedCount > 0)
+      return resp.json({ status: 200, msg: "Data is updated successfully!" });
+    return resp.json({ status: 200, msg: "Data is already same" });
+  } catch (error) {
+    console.log(error.stack);
+    return resp.json({ status: 500, msg: "Internal server error" });
   }
 };

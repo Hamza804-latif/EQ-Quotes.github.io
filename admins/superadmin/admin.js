@@ -24,7 +24,9 @@ const Load = async function (route) {
         <td>${item.createdAt}</td>
         <td class='buttons'><button onclick="Delete('${
           item._id
-        }')">Delete</button><button onclick="Edit()">Edit</button></td>
+        }')">Delete</button><button onclick="Edit(${JSON.stringify(item)
+        .split('"')
+        .join("&quot;")})">Edit</button></td>
 
       </tr>`;
     }
@@ -57,7 +59,9 @@ const Search = async (route) => {
         <td>${item.createdAt}</td>
         <td class='buttons'><button onclick="Delete('${
           item._id
-        }')">Delete</button><button onclick="Edit()">Edit</button></td>
+        }')">Delete</button><button onclick="Edit(${JSON.stringify(item)
+        .split('"')
+        .join("&quot;")})">Edit</button></td>
       </tr>`;
     }
     tableBodyRef.innerHTML = table;
@@ -106,11 +110,66 @@ const Delete = async (id) => {
   }
 };
 
-const Edit = () => {
+const Edit = (item) => {
+  let id = document.querySelector(".leadId");
+  let firstnameRef = document.querySelector(".firstname");
+  let lastnameRef = document.querySelector(".lastname");
+  let zipcodenameRef = document.querySelector(".zipcode");
+  let numberRef = document.querySelector(".number");
+  let emailRef = document.querySelector(".email");
+  let selectOption = document.querySelector(".home");
+  let stateRef = document.querySelector(".state");
+  id.innerHTML = item?._id;
+  firstnameRef.value = item?.firstname;
+  lastnameRef.value = item?.lastname;
+  zipcodenameRef.value = item?.zipcode;
+  numberRef.value = item?.phonenumber;
+  emailRef.value = item?.email;
+  selectOption.value = item?.earn == "true" ? "yes" : "no";
+  stateRef.value = item?.state;
+
   let editDataMain = document.querySelector(".editDataMain");
   editDataMain.classList.remove("hide");
 };
-const UpdateData = () => {
+const UpdateData = async (route) => {
+  let id = document.querySelector(".leadId");
+  let firstnameRef = document.querySelector(".firstname");
+  let lastnameRef = document.querySelector(".lastname");
+  let zipcodenameRef = document.querySelector(".zipcode");
+  let numberRef = document.querySelector(".number");
+  let emailRef = document.querySelector(".email");
+  let selectOption = document.querySelector(".home");
+  let stateRef = document.querySelector(".state");
+
+  let data = {
+    firstname: firstnameRef.value,
+    lastname: lastnameRef.value,
+    zipcode: zipcodenameRef.value,
+    phonenumber: numberRef.value,
+    email: emailRef.value,
+    earn: selectOption.value == "yes" ? "true" : "false",
+    state: stateRef.value,
+  };
+
+  try {
+    let res = await fetch(
+      `http://localhost:5000/agent/${route}/${id.innerHTML}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    let response = await res.json();
+    if (response.status == 200) {
+      alert(response.msg);
+      location.reload();
+    }
+  } catch (error) {
+    alert(error.message);
+  }
   let editDataMain = document.querySelector(".editDataMain");
   editDataMain.classList.add("hide");
 };

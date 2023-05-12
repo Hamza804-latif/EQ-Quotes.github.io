@@ -24,9 +24,16 @@ export const SearchClient = async (req, resp) => {
   }
 };
 export const SaveClient = async (req, resp) => {
-  let homeWarrantySchema = new homeWarranty(req.body);
-  let savedData = await homeWarrantySchema.save();
-  console.log(savedData);
+  try {
+    let homeSchema = new homeWarranty(req.body);
+    let savedData = await homeSchema.save();
+    if (savedData)
+      return resp.json({ status: 200, msg: "Data saved Successfully" });
+    return resp.json({ status: 500, msg: "Something went wrong" });
+  } catch (error) {
+    console.log(error.stack);
+    return resp.json({ status: 500, msg: "Internal Server Error" });
+  }
 };
 export const DeleteClient = async (req, resp) => {
   console.log("in");
@@ -40,5 +47,19 @@ export const DeleteClient = async (req, resp) => {
   } catch (error) {
     console.log(error.stack);
     return resp.json({ status: 500, msg: "Internal Server Error" });
+  }
+};
+export const UpdateData = async (req, resp) => {
+  try {
+    let update = await homeWarranty.updateOne(
+      { _id: req.params.id },
+      { $set: req.body }
+    );
+    if (update?.modifiedCount > 0)
+      return resp.json({ status: 200, msg: "Data is updated successfully!" });
+    return resp.json({ status: 200, msg: "Data is already same" });
+  } catch (error) {
+    console.log(error.stack);
+    return resp.json({ status: 500, msg: "Internal server error" });
   }
 };

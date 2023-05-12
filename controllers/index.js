@@ -83,7 +83,6 @@ async function SendMessage(event) {
   });
   let value = params.zip;
   formData = { ...formData, zipcode: value };
-  console.log(formData);
   let { firstname, lastname, email, phonenumber, state, creditscore } =
     formData;
   let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -98,49 +97,84 @@ async function SendMessage(event) {
   ) {
     switch (event?.target?.name) {
       case "homei":
-        let homeiData = await fetch(
-          "http://localhost:5000/agent/homeinsurance/save",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
+        try {
+          let homeiData = await fetch(
+            "http://localhost:5000/agent/homeinsurance/save",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+          let homeidata = await homeiData.json();
+          if (homeidata?.status == 200) {
+            alert(homeidata?.msg);
           }
-        );
+        } catch (error) {
+          alert(error.message);
+        }
         break;
       case "homes":
-        let homesData = await fetch(
-          "http://localhost:5000/agent/homesecurity/save",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
+        try {
+          let homesData = await fetch(
+            "http://localhost:5000/agent/homesecurity/save",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+          let homesdata = await homesData.json();
+          if (homesdata?.status == 200) {
+            alert(homesdata?.msg);
           }
-        );
+        } catch (error) {
+          alert(error.message);
+        }
         break;
       case "homew":
-        let homewData = await fetch(
-          "http://localhost:5000/agent/homewarranty/save",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
+        try {
+          let homewData = await fetch(
+            "http://localhost:5000/agent/homewarranty/save",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+          let homewdata = await homewData.json();
+          if (homewdata?.status == 200) {
+            alert(homewdata?.msg);
           }
-        );
+        } catch (error) {
+          alert(error.message);
+        }
         break;
       case "solar":
-        let solarData = await fetch("http://localhost:5000/agent/solar/save", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        try {
+          let solarData = await fetch(
+            "http://localhost:5000/agent/solar/save",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+          let solardata = await solarData.json();
+          if (solardata?.status == 200) {
+            alert(solardata?.msg);
+          }
+        } catch (error) {
+          alert(error.message);
+        }
         break;
     }
   } else {

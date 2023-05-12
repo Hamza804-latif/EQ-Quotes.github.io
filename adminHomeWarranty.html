@@ -100,6 +100,80 @@
             outline: 1px solid green;
             color: green;
         }
+
+        .editDataMain {
+            height: 100vh;
+            width: 100vw;
+            opacity: 1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .editDataMain h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .editData {
+            min-height: 80vh;
+            width: 70vw;
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 1);
+            opacity: 1;
+            background-color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+        }
+
+        .editData .inputs {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 16px;
+        }
+
+        .editData .inputs input,
+        select {
+            padding: 14px 8px;
+            border: none;
+            outline: 1px solid crimson;
+            font-size: 18px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .editData .inputs input,
+        select:focus {
+            outline: 2px solid crimson;
+        }
+
+        .editData .inputs button {
+            align-self: flex-start;
+            padding: 14px 18px;
+            background: rgba(239, 228, 230, 0.128);
+            border: none;
+            outline: 1px solid crimson;
+            color: crimson;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .editData .inputs button:hover {
+            background: rgba(248, 160, 176, 0.317);
+            font-weight: bolder;
+
+        }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
@@ -139,6 +213,29 @@
         <tbody class="tableBody"></tbody>
         </thead>
     </table>
+    <div class="editDataMain hide">
+        <div class="editData">
+            <h1>Edit Data</h1>
+            <div class="inputs">
+                <div class="leadId"></div>
+
+                <input type="text" placeholder="Enter Firstname" class="firstname">
+                <input type="text" placeholder="Enter Lastname" class="lastname">
+                <input type="text" placeholder="Enter Zipcode" class="zipcode">
+                <input type="text" placeholder="Enter Phonenumber" class="number">
+                <input type="text" placeholder="Enter Email" class="email">
+                <label for="">
+                    Are you a home owner?
+                    <select name="homeowner" class="home">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                </label>
+                <input type="text" placeholder="Enter State" class="state">
+                <button onclick="UpdateData('homewarranty')">Update</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./admins/superadmin/admin.js"></script>
 

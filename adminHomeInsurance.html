@@ -119,7 +119,7 @@
         }
 
         .editData {
-            height: 80vh;
+            min-height: 80vh;
             width: 70vw;
             box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 1);
             opacity: 1;
@@ -138,7 +138,8 @@
             gap: 16px;
         }
 
-        .editData .inputs input {
+        .editData .inputs input,
+        select {
             padding: 14px 8px;
             border: none;
             outline: 1px solid crimson;
@@ -146,7 +147,8 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
-        .editData .inputs input:focus {
+        .editData .inputs input,
+        select:focus {
             outline: 2px solid crimson;
         }
 
@@ -209,13 +211,21 @@
         <div class="editData">
             <h1>Edit Data</h1>
             <div class="inputs">
-                <input type="text" placeholder="Enter Firstname">
-                <input type="text" placeholder="Enter Lastname">
-                <input type="text" placeholder="Enter Zipcode">
-                <input type="text" placeholder="Enter Phonenumber">
-                <input type="text" placeholder="Enter Email">
-                <input type="text" placeholder="Enter State">
-                <button onclick="UpdateData()">Update</button>
+                <div class="leadId"></div>
+                <input type="text" placeholder="Enter Firstname" class="firstname">
+                <input type="text" placeholder="Enter Lastname" class="lastname">
+                <input type="text" placeholder="Enter Zipcode" class="zipcode">
+                <input type="text" placeholder="Enter Phonenumber" class="number">
+                <input type="text" placeholder="Enter Email" class="email">
+                <label for="">
+                    Are you a home owner?
+                    <select name="homeowner" class="home">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                </label>
+                <input type="text" placeholder="Enter State" class="state">
+                <button onclick="UpdateData('homeinsurance')">Update</button>
             </div>
         </div>
     </div>
