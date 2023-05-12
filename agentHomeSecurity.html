@@ -46,7 +46,9 @@
         table {
             border-collapse: collapse;
             margin: auto;
-            margin-top: 50px;
+            /* margin-top: 50px; */
+            border: none;
+
         }
 
         th,
@@ -83,6 +85,41 @@
             padding: 12px;
             cursor: pointer
         }
+
+        th {
+            color: #ffffff;
+            background: #4FC3A1;
+        }
+
+        td {
+            outline: 1px solid #dcdcdc;
+
+        }
+
+        .tableWrap {
+            position: relative;
+            width: 96vw;
+            margin: auto;
+        }
+
+        .tableScroll {
+            height: 65vh;
+            overflow: auto;
+            width: fit-content;
+            margin: auto;
+            /* outline: 2px solid green; */
+        }
+
+        .tableScroll::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .tableScroll::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #4fc3a0a4;
+        }
     </style>
 </head>
 
@@ -99,22 +136,26 @@
         <input type="text" class="search" placeholder="Search by phonenumber..." onchange="Search('homesecurity')">
         <button onclick="Search('homesecurity')">Search</button>
     </div>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Universal Lead Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone #</th>
-                <th>Email</th>
-                <th>Zip Code</th>
-                <th>State</th>
-                <th>Home Owner</th>
-                <th>Time</th>
-            </tr>
-        <tbody class="tableBody"></tbody>
-        </thead>
-    </table>
+    <div class="tableWrap">
+        <div class="tableScroll">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Universal Lead Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone #</th>
+                        <th>Email</th>
+                        <th>Zip Code</th>
+                        <th>State</th>
+                        <th>Home Owner</th>
+                        <th>Time</th>
+                    </tr>
+                <tbody class="tableBody"></tbody>
+                </thead>
+            </table>
+        </div>
+    </div>
 </body>
 <script src="./admins/agents/agents.js"></script>
 
