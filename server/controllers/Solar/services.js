@@ -37,7 +37,6 @@ export const SaveClient = async (req, resp) => {
 };
 
 export const DeleteClient = async (req, resp) => {
-  console.log("in");
   try {
     let deletedData = await Solar.findByIdAndDelete(req?.params?.id);
     if (deletedData) {
@@ -56,7 +55,6 @@ export const UpdateData = async (req, resp) => {
       { _id: req.params.id },
       { $set: req.body }
     );
-    console.log("dsdsa", update);
     if (update?.modifiedCount > 0)
       return resp.json({ status: 200, msg: "Data is updated successfully!" });
     return resp.json({ status: 200, msg: "Data is already same" });
