@@ -32,7 +32,7 @@ function Submit(event) {
   if (modalInputRef.value && modalInputRef.value.length == 5) {
     error.classList.add("hide");
     localStorage.setItem("zip", modalInputRef.value);
-    window.location.href = `../${page ? page : "notfound.html"}?zip=${
+    window.location.href = `/${page ? page : "notfound.html"}?zip=${
       modalInputRef.value
     }`;
     page = null;
