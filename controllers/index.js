@@ -32,7 +32,7 @@ function Submit(event) {
   if (modalInputRef.value && modalInputRef.value.length == 5) {
     error.classList.add("hide");
     localStorage.setItem("zip", modalInputRef.value);
-    window.location.href = `https://hamza804-latif.github.io/EQ-Quotes.github.io/${
+    window.location.replace = `https://hamza804-latif.github.io/EQ-Quotes.github.io/${
       page ? page : "notfound.html"
     }?zip=${modalInputRef.value}`;
     page = null;
