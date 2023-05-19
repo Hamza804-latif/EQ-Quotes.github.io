@@ -1,8 +1,17 @@
 import { homeInsurance } from "../../database/models/clients.js";
 
 export const GetClients = async (req, resp) => {
-  let data = await homeInsurance.find({});
-  resp.json(data);
+  try {
+    let data = await homeInsurance.find({}).lean();
+
+    for (let i = 0; i < data.length; i++) {
+      data[i] = { ...data[i], createdAt: data[i].createdAt.toLocaleString() };
+    }
+
+    resp.json(data);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export const SearchClient = async (req, resp) => {

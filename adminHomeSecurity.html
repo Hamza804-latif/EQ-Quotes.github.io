@@ -137,8 +137,8 @@
         .editData .inputs {
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            gap: 16px;
+            padding: 15px;
+            gap: 12px;
         }
 
         .editData .inputs input,
@@ -180,6 +180,8 @@
 
         th {
             color: #ffffff;
+            white-space: pre;
+
             background: #4FC3A1;
         }
 
@@ -247,7 +249,7 @@
                         <th>Home Owner</th>
                         <th>Credit Score</th>
 
-                        <th>Time</th>
+                        <th>Time(Eastren)</th>
                         <th>Actions</th>
 
                     </tr>
@@ -275,6 +277,8 @@
                     </select>
                 </label>
                 <input type="text" placeholder="Enter State" class="state">
+                <input type="text" placeholder="Enter Credit Score" class="score">
+
                 <button onclick="UpdateData('homesecurity')">Update</button>
             </div>
         </div>

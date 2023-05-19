@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 import { homeSecurity } from "../../database/models/clients.js";
 
 export const GetClients = async (req, resp) => {
-  let data = await homeSecurity.find({});
+  let data = await homeSecurity.find({}).lean();
+  for (let i = 0; i < data.length; i++) {
+    data[i] = { ...data[i], createdAt: data[i].createdAt.toLocaleString() };
+  }
   resp.json(data);
 };
 

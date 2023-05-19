@@ -21,6 +21,7 @@ const Load = async function (route) {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.earn == "true" ? "Yes" : "No"}</td>
+        <td>${item.creditscore}</td>
         <td>${item.createdAt}</td>
         <td class='buttons'><button onclick="Delete('${
           item._id
@@ -56,6 +57,7 @@ const Search = async (route) => {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.earn == "true" ? "Yes" : "No"}</td>
+        <td>${item.creditscore}</td>
         <td>${item.createdAt}</td>
         <td class='buttons'><button onclick="Delete('${
           item._id
@@ -119,6 +121,7 @@ const Edit = (item) => {
   let emailRef = document.querySelector(".email");
   let selectOption = document.querySelector(".home");
   let stateRef = document.querySelector(".state");
+  let score = document.querySelector(".score");
   id.innerHTML = item?._id;
   firstnameRef.value = item?.firstname;
   lastnameRef.value = item?.lastname;
@@ -127,6 +130,7 @@ const Edit = (item) => {
   emailRef.value = item?.email;
   selectOption.value = item?.earn == "true" ? "yes" : "no";
   stateRef.value = item?.state;
+  score.value = item?.creditscore;
 
   let editDataMain = document.querySelector(".editDataMain");
   editDataMain.classList.remove("hide");
@@ -140,6 +144,7 @@ const UpdateData = async (route) => {
   let emailRef = document.querySelector(".email");
   let selectOption = document.querySelector(".home");
   let stateRef = document.querySelector(".state");
+  let score = document.querySelector(".score");
 
   let data = {
     firstname: firstnameRef.value,
@@ -149,6 +154,7 @@ const UpdateData = async (route) => {
     email: emailRef.value,
     earn: selectOption.value == "yes" ? "true" : "false",
     state: stateRef.value,
+    creditscore: score.value,
   };
 
   try {
@@ -170,6 +176,11 @@ const UpdateData = async (route) => {
   } catch (error) {
     alert(error.message);
   }
+  let editDataMain = document.querySelector(".editDataMain");
+  editDataMain.classList.add("hide");
+};
+
+const CloseModal = () => {
   let editDataMain = document.querySelector(".editDataMain");
   editDataMain.classList.add("hide");
 };

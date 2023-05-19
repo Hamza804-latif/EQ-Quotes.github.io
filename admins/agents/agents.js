@@ -19,6 +19,7 @@ const Load = async function (route) {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.earn == "true" ? "Yes" : "No"}</td>
+        <td>${item.creditscore}</td>
         <td>${item.createdAt}</td>
       </tr>`;
     }
@@ -47,6 +48,7 @@ const Search = async (route) => {
         <td>${item.zipcode}</td>
         <td>${item.state}</td>
         <td>${item.earn == "true" ? "Yes" : "No"}</td>
+        <td>${item.creditscore}</td>
         <td>${item.createdAt}</td>
       </tr>`;
     }
