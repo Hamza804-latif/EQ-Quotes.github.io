@@ -180,7 +180,10 @@ const UpdateData = async (route) => {
   editDataMain.classList.add("hide");
 };
 
-const CloseModal = () => {
-  let editDataMain = document.querySelector(".editDataMain");
-  editDataMain.classList.add("hide");
+const CloseModal = (event) => {
+  // console.log(event.target.classList);
+  if (event?.target?.classList[0] == "editDataMain") {
+    let editDataMain = document.querySelector(".editDataMain");
+    editDataMain.classList.add("hide");
+  }
 };

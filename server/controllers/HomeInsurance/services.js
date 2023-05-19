@@ -5,7 +5,12 @@ export const GetClients = async (req, resp) => {
     let data = await homeInsurance.find({}).lean();
 
     for (let i = 0; i < data.length; i++) {
-      data[i] = { ...data[i], createdAt: data[i].createdAt.toLocaleString() };
+      data[i] = {
+        ...data[i],
+        createdAt: data[i].createdAt.toLocaleString("en-US", {
+          timeZone: "America/New_York",
+        }),
+      };
     }
 
     resp.json(data);
@@ -29,7 +34,9 @@ export const SearchClient = async (req, resp) => {
       for (let i = 0; i < result.length; i++) {
         result[i] = {
           ...result[i],
-          createdAt: result[i].createdAt.toLocaleString(),
+          createdAt: result[i].createdAt.toLocaleString("en-US", {
+            timeZone: "America/New_York",
+          }),
         };
       }
       resp.json(result);
