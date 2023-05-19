@@ -17,8 +17,14 @@ export const SearchClient = async (req, resp) => {
           phonenumber: { $regex: req.params.id },
         },
       ],
-    });
+    }).lean();
     if (result) {
+      for (let i = 0; i < result.length; i++) {
+        result[i] = {
+          ...result[i],
+          createdAt: result[i].createdAt.toLocaleString(),
+        };
+      }
       resp.json(result);
     }
   } catch (error) {
